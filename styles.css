@@ -22,7 +22,8 @@ main {
 }
 
 .player {
-    background-color: aliceblue;
+    
+    background-color: rgb(214, 227, 248);
     width: 82%;
     height: 83vh;
     position: relative;
@@ -30,6 +31,16 @@ main {
     left: 2%;
     border-radius: 25px;
     padding: 2px;
+}
+
+.details{
+    margin: auto 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    
+}
+.music-name{
+    font-weight: 350;
 }
 
 .sidebar {
@@ -85,7 +96,13 @@ main {
     border-radius: 50%;
     background-image: url('./fantasy-4073144_1280.jpg');
     background-size: cover;
-    box-shadow: 0 0 0 10px rgba(25, 2, 255, 0.08);
+    box-shadow: 0 0 0 10px rgba(32, 13, 240, 0.329);
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk.play{
+    animation-play-state: running ;
 }
 
 .disk::before {
@@ -97,18 +114,19 @@ main {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: aliceblue;
+    background: rgb(214, 227, 248);
 }
 
-.song-slider {
+.slider {
     width: 90%;
     position: relative;
+    left: 30px;
 }
 
 .seek-bar {
     -webkit-appearance: none;
-    width: 85%;
-    margin-left: 30px;
+    width: 100%;
+    margin-left: 0;
     height: 5px;
     border-radius: 10px;
     background: purple;
@@ -135,9 +153,9 @@ main {
 }
 
 .controls {
-    width: 100%;
+    width: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     margin-top: 20px;
@@ -191,6 +209,31 @@ main {
         box-shadow: 0;
     }
     50% {
-        box-shadow: 0 0 0 5px grey;
+        box-shadow: 0 0 0 5px grey ;
+    }
+}
+
+.btn{
+    width: 40px;
+    height: 40px;
+    background: grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn img{
+    width: 20px;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
